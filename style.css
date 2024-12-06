@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #00439f;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+.menu a:hover {
+  color: #3789f4;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  /* .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  } */
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #7febff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+}
+
+/* alt */
+main {
+  background-color: #ffffff;
+}
+
+footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding-block: 40px;
+  padding-left: 30%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+
+  margin-block: 1rem;
+  padding-inline: 20px;
+  line-height: 1.5;
+  font-size: medium;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: left;
+  margin-block: 1rem;
+  padding-inline: 20px;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-block: 3rem;
+}
+
+@media (max-width: 700px) {
+  img {
+    width: 100%;
+  }
+
+  .galleri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 3rem;
+  }
+
+  .billede1 {
+    padding: 10px;
+    margin-bottom: 3rem;
+  }
+
+  .passionsvideo {
+    padding: 50px;
+    gap: 20px;
+  }
+
+  .galleri2 {
+    display: none;
+  }
+
+  .snyd {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  img {
+    width: 100%;
+  }
+
+  .gruppe1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .snyd {
+    padding: 50px;
+  }
+  .galleri {
+    display: none !important; /* Tvinger reglen igennem */
+  }
+
+  .galleri2 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 kolonner af lige stor størrelse */
+    grid-template-rows: auto; /* Automatisk højde for rækker */
+    gap: 10px; /* Mellemrum mellem grid-celler */
+    padding: 10px;
+  }
+
+  .galleri2 img {
+    width: 100%; /* Billederne fylder hele deres grid-celle */
+    height: auto; /* Bevarer proportionerne af billederne */
+    object-fit: cover; /* Undgår billederne bliver strakte */
+  }
+
+  /* Placering af billede 6 */
+  .billede6 {
+    grid-column: 1 / 3; /* Billede 6 starter i kolonne 1 og slutter i kolonne 2 */
+    grid-row: 1; /* Det er i første række */
+  }
+
+  /* Placering af billede 7 */
+  .billede7 {
+    grid-column: 3 / 7; /* Billede 7 starter i kolonne 3 og slutter i kolonne 7 */
+    grid-row: 1; /* Det er i første række */
+  }
+
+  /* Placering af billede 8 */
+  .billede8 {
+    grid-column: 3 / 5; /* Billede 8 starter i kolonne 3 og slutter i kolonne 5 */
+    grid-row: 2; /* Det er i anden række */
+  }
+
+  /* Placering af billede 9 */
+  .billede9 {
+    grid-column: 5 / 7; /* Billede 9 starter i kolonne 5 og slutter i kolonne 7 */
+    grid-row: 2; /* Det er i anden række */
+  }
+
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: left;
+    margin-block: 2rem;
+    padding-left: 50px;
+  }
+
+  .billede1 {
+    margin-top: 2rem;
+    margin-right: 50px;
+  }
+
+  .galleri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 3rem;
+  }
+
+  .billede1 {
+    padding: 10px;
+    margin-bottom: 3rem;
+  }
+
+  .passionsvideo {
+    padding: 50px;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding-block: 40px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+  }
+  h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-align: left;
+    margin-block: 1rem;
+    padding-inline: 50px;
+  }
+
+  p {
+    padding-left: 50px;
+  }
+}
+
+/* font */
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
